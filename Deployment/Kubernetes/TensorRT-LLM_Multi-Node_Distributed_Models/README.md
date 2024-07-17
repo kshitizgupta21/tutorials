@@ -146,15 +146,6 @@ capabilities.
       && helm repo update
     ```
 
-2.  Run the command below to install the service.
-
-    ```bash
-    helm install -n kube-system node-feature-discovery kube-nfd/node-feature-discovery \
-      --set nameOverride=node-feature-discovery \
-      --set worker.tolerations[0].key=nvidia.com/gpu \
-      --set worker.tolerations[0].operator=Exists \
-      --set worker.tolerations[0].effect=NoSchedule
-    ```
 
     > [!Note]
     > The above command sets toleration values which allow for the deployment of a pod onto a node with
